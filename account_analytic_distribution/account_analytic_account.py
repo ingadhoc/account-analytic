@@ -12,14 +12,14 @@ _logger = logging.getLogger(__name__)
 class AccountAnalyticAccount(models.Model):
     _inherit = "account.analytic.account"
 
-    type = fields.Selection(
+    account_type = fields.Selection(
         selection_add=[('distribution', 'Distribution')],
-        )
+    )
     distribution_line_ids = fields.One2many(
         'account.analytic.account.distribution_line',
         'distribution_analytic_id',
         'Distribution Line',
-        )
+    )
 
     @api.one
     @api.constrains('distribution_line_ids', 'type')
@@ -39,13 +39,13 @@ class AccountAnalyticAccountDistribution(models.Model):
         'Distribution Account',
         required=True,
         ondelete='cascade',
-        )
+    )
     account_analytic_id = fields.Many2one(
         'account.analytic.account',
         'Analytic Account',
         required=True,
-        )
+    )
     percentage = fields.Float(
         'Percentage',
         required=True,
-        )
+    )
