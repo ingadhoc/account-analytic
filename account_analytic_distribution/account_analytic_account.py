@@ -22,9 +22,9 @@ class AccountAnalyticAccount(models.Model):
     )
 
     @api.one
-    @api.constrains('distribution_line_ids', 'type')
+    @api.constrains('distribution_line_ids', 'account_type')
     def check_distribution_lines(self):
-        if self.type == 'distribution' and (sum(
+        if self.account_type == 'distribution' and (sum(
                 self.distribution_line_ids.mapped('percentage')) != 100.0):
             raise Warning(_(
                 'Lines of the analytic distribuion account "%s" must '

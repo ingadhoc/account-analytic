@@ -30,7 +30,7 @@ class AccountInvoice(models.Model):
         for a, b, move_line in move_lines:
             analytic = self.env['account.analytic.account'].browse(
                 move_line['analytic_account_id'])
-            if analytic.type == 'distribution':
+            if analytic.account_type == 'distribution':
                 analytic.check_distribution_lines()
                 remaining_lines = len(analytic.distribution_line_ids)
                 # we do this way because of rounding erros, we use residual
