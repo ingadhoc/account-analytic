@@ -20,8 +20,8 @@
 ##############################################################################
 {
     "name": "Account Contract Project",
-    "version": "8.0.0.0.0",
-    'author':  'ADHOC SA',
+    "version": "9.0.0.0.0",
+    'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
     "category": "Accounting",
@@ -39,7 +39,7 @@ Account Contract Project
     ],
     'test': [
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }
