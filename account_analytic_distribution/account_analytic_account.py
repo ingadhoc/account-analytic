@@ -12,19 +12,19 @@ _logger = logging.getLogger(__name__)
 class AccountAnalyticAccount(models.Model):
     _inherit = "account.analytic.account"
 
-    type = fields.Selection(
+    account_type = fields.Selection(
         selection_add=[('distribution', 'Distribution')],
-        )
+    )
     distribution_line_ids = fields.One2many(
         'account.analytic.account.distribution_line',
         'distribution_analytic_id',
         'Distribution Line',
-        )
+    )
 
     @api.one
-    @api.constrains('distribution_line_ids', 'type')
+    @api.constrains('distribution_line_ids', 'account_type')
     def check_distribution_lines(self):
-        if self.type == 'distribution' and (sum(
+        if self.account_type == 'distribution' and (sum(
                 self.distribution_line_ids.mapped('percentage')) != 100.0):
             raise Warning(_(
                 'Lines of the analytic distribuion account "%s" must '
@@ -39,13 +39,13 @@ class AccountAnalyticAccountDistribution(models.Model):
         'Distribution Account',
         required=True,
         ondelete='cascade',
-        )
+    )
     account_analytic_id = fields.Many2one(
         'account.analytic.account',
         'Analytic Account',
         required=True,
-        )
+    )
     percentage = fields.Float(
         'Percentage',
         required=True,
-        )
+    )

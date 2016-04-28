@@ -20,11 +20,11 @@
 ##############################################################################
 {
     'name': 'Account Analytic Distribution',
-    'version': '8.0.0.0.0',
+    'version': '9.0.0.0.0',
     'category': 'Accounting',
     'sequence': 14,
     'summary': '',
-    'author':  'ADHOC SA',
+    'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
     'images': [
@@ -35,12 +35,12 @@
     'data': [
         'account_analytic_account_view.xml',
         'security/ir.model.access.csv',
-             ],
+    ],
     'demo': [
     ],
     'test': [
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }
