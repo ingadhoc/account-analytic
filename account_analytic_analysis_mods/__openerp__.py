@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name": "Account Analytic / Contract Modifications",
-    'version': '8.0.1.0.0',
+    'version': '8.0.0.0.0',
     'category': 'Accounting',
     'sequence': 14,
     'summary': 'Quotations, Sales Orders, Invoicing',
@@ -37,7 +37,7 @@ Account Analytic / Contract Modifications
     'images': [
     ],
     'depends': [
-        'account_analytic_analysis',
+        'analytic',
     ],
     'data': [
     ],
@@ -45,7 +45,7 @@ Account Analytic / Contract Modifications
     ],
     'test': [
     ],
-    'installable': True,
+    'installable': False,
     'auto_install': False,
     'application': True,
 }
