@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name": "Account Move Analytic",
-    'version': '8.0.0.0.0',
+    'version': '9.0.0.0.0',
     'category': 'Accounting',
     'sequence': 14,
     'description': """
