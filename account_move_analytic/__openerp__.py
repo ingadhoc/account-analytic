@@ -42,7 +42,7 @@ Account Move Analytic
     ],
     'test': [
     ],
-    'installable': False,
+    'installable': True,
     # incompatibility with account_analytic_accounts:
     'auto_install': False,
     'application': False,
