@@ -26,9 +26,8 @@
     'description': """
 Account Move Analytic
 =====================
-
     """,
-    'author':  'ADHOC SA',
+    'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
     'images': [
@@ -43,7 +42,7 @@ Account Move Analytic
     ],
     'test': [
     ],
-    'installable': False,
+    'installable': True,
     # incompatibility with account_analytic_accounts:
     'auto_install': False,
     'application': False,
