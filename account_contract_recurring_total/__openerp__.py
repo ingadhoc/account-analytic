@@ -19,7 +19,7 @@
 #
 ##############################################################################
 {
-    'name': 'Update Prices on Contracts',
+    'name': 'Contracts Recurring Total',
     'version': '8.0.1.0.0',
     'category': 'Sales Management',
     'sequence': 14,
@@ -34,7 +34,6 @@
     ],
     'data': [
         'account_analytic_account_view.xml',
-        'account_analytic_account_data.xml',
     ],
     'demo': [
     ],
