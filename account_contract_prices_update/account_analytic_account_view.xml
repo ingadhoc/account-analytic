@@ -8,7 +8,7 @@
     <field name="inherit_id" ref="account_analytic_analysis.account_analytic_account_form_form"/>
     <field name="arch" type="xml">
         <button name="recurring_create_invoice" position="after">
-            <button class="oe_link" name="update_lines_prices_from_products" attrs="{'invisible': [('recurring_invoices','!=',True)]}" string="⇒ Update Prices from Products" type="object" groups="base.group_no_one"/>
+            <button class="oe_link" name="update_lines_prices_from_products" attrs="{'invisible': [('recurring_invoices','!=',True)]}" string="⇒ Update Data from Products" type="object" groups="base.group_no_one"/>
         </button>
     </field>
 </record>
