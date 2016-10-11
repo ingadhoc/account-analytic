@@ -1,4 +1,4 @@
-[![Runbot Status](http://runbot.adhoc.com.ar/runbot/badge/flat/17/8.0.svg)](http://runbot.adhoc.com.ar/runbot/repo/github-com-ingadhoc-account-analytic-17)
+[![Runbot Status](http://runbot.adhoc.com.ar/runbot/badge/flat/22/8.0.svg)](http://runbot.adhoc.com.ar/runbot/repo/github-com-ingadhoc-account-analytic-22)
 [![Build Status](https://travis-ci.org/ingadhoc/account-analytic.svg?branch=8.0)](https://travis-ci.org/ingadhoc/account-analytic)
 [![Coverage Status](https://coveralls.io/repos/ingadhoc/account-analytic/badge.png?branch=8.0)](https://coveralls.io/r/ingadhoc/account-analytic?branch=8.0)
 [![Code Climate](https://codeclimate.com/github/ingadhoc/account-analytic/badges/gpa.svg)](https://codeclimate.com/github/ingadhoc/account-analytic)
