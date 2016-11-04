@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015  ADHOC SA  (http://www.adhoc.com.ar)
+#    Copyright (C) 2016  ADHOC SA  (http://www.adhoc.com.ar)
 #    All Rights Reserved.
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -19,18 +19,19 @@
 #
 ##############################################################################
 {
-    "name": "Account Contract Project",
+    "name": "Contracts Recurring Total",
     "version": "9.0.0.0.0",
+    'version': '8.0.1.0.0',
+    'category': 'Sales Management',
+    'sequence': 14,
+    'summary': '',
     'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
-    "category": "Accounting",
-    "description": """
-Account Contract Project
-========================
-    """,
+    'images': [
+    ],
     'depends': [
-        'project'
+        'account_analytic_analysis',
     ],
     'data': [
         'account_analytic_account_view.xml',

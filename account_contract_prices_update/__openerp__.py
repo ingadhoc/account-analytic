@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2015  ADHOC SA  (http://www.adhoc.com.ar)
+#    Copyright (C) 2016  ADHOC SA  (http://www.adhoc.com.ar)
 #    All Rights Reserved.
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -19,31 +19,28 @@
 #
 ##############################################################################
 {
-    "name": "Account Move Analytic",
-    'version': '9.0.0.0.0',
-    'category': 'Accounting',
+    'name': 'Update Prices on Contracts',
+    'version': '8.0.1.0.0',
+    'category': 'Sales Management',
     'sequence': 14,
-    'description': """
-Account Move Analytic
-=====================
-    """,
+    'summary': '',
     'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
     'images': [
     ],
     'depends': [
-        'account',
+        'account_analytic_analysis',
     ],
     'data': [
-        'account_view.xml'
+        'account_analytic_account_view.xml',
+        'account_analytic_account_data.xml',
     ],
     'demo': [
     ],
     'test': [
     ],
     'installable': True,
-    # incompatibility with account_analytic_accounts:
     'auto_install': False,
     'application': False,
 }
