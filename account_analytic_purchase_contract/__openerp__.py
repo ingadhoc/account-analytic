@@ -20,7 +20,7 @@
 ##############################################################################
 {
     "name": "Account Analytic Purchase Contract",
-    'version': '8.0.1.0.0',
+    'version': '8.0.1.1.0',
     'category': 'Accounting',
     'sequence': 14,
     'summary': 'Quotations, Sales Orders, Invoicing',
@@ -30,7 +30,7 @@ Account Analytic Purchase Contract
 Manage Purchase Contracts and generate Recurring Invoices as you can do in
 sales.
     """,
-    'author':  'ADHOC SA',
+    'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
     'images': [
@@ -40,9 +40,10 @@ sales.
         'purchase',
     ],
     'data': [
-    'view/account_purchase_contract_view.xml',
-    'view/account_purchase_contract_menu.xml',
-    'account_analytic_analysis_cron.xml'
+        'security/ir.model.access.csv',
+        'view/account_purchase_contract_view.xml',
+        'view/account_purchase_contract_menu.xml',
+        'account_analytic_analysis_cron.xml'
     ],
     'demo': [
     ],
@@ -52,4 +53,3 @@ sales.
     'auto_install': False,
     'application': True,
 }
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
