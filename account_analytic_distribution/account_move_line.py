@@ -15,7 +15,7 @@ class AccountMoveLine(models.Model):
     @api.one
     @api.constrains('analytic_account_id')
     def check_account_type(self):
-        if self.analytic_account_id.type == 'distribution':
+        if self.analytic_account_id.account_type == 'distribution':
             raise Warning(_(
                 'You can not choose an analytic account of type "Distribution"'
                 ' on a journal entry, you need to split lines manually'))
