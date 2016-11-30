@@ -3,4 +3,4 @@
 # For copyright and license notices, see __openerp__.py file in module root
 # directory
 ##############################################################################
-from . import account_analytic_account
+from . import sale_subscription

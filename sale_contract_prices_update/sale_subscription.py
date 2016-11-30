@@ -6,8 +6,8 @@
 from openerp import models, api
 
 
-class account_analytic_account(models.Model):
-    _inherit = "account.analytic.account"
+class SaleSubscription(models.Model):
+    _inherit = "sale.subscription"
 
     @api.multi
     def update_lines_prices_from_products(self):

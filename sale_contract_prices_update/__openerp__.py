@@ -19,8 +19,8 @@
 #
 ##############################################################################
 {
-    'name': 'Update Prices on Contracts',
-    'version': '8.0.1.0.0',
+    'name': 'Update Prices on sale subscriptions lines',
+    'version': '9.0.1.0.0',
     'category': 'Sales Management',
     'sequence': 14,
     'summary': '',
@@ -30,17 +30,17 @@
     'images': [
     ],
     'depends': [
-        'account_analytic_analysis',
+        'sale_contract',
     ],
     'data': [
-        'account_analytic_account_view.xml',
-        'account_analytic_account_data.xml',
+        'sale_subscription_view.xml',
+        'sale_subscription_data.xml',
     ],
     'demo': [
     ],
     'test': [
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }
