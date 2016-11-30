@@ -6,8 +6,8 @@
 from openerp import models, fields
 
 
-class AccountAnalyticInvoiceLine(models.Model):
-    _inherit = 'account.analytic.invoice.line'
+class SaleSubscriptionLine(models.Model):
+    _inherit = 'sale.subscription.line'
     _order = 'sequence'
 
     sequence = fields.Integer(

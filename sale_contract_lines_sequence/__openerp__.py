@@ -19,8 +19,8 @@
 #
 ##############################################################################
 {
-    'name': 'Add sequence on contract lines',
-    'version': '8.0.1.0.0',
+    'name': 'Add sequence on sale subscriptions lines',
+    'version': '9.0.1.0.0',
     'category': 'Sales Management',
     'sequence': 14,
     'summary': '',
@@ -30,16 +30,16 @@
     'images': [
     ],
     'depends': [
-        'account_analytic_analysis',
+        'sale_contract',
     ],
     'data': [
-        'account_analytic_invoice_line_view.xml',
+        'sale_subscription_line_view.xml',
     ],
     'demo': [
     ],
     'test': [
     ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }
