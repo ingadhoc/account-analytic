@@ -19,13 +19,14 @@
 #
 ##############################################################################
 {
-    "name": "Account Move Analytic",
-    'version': '9.0.0.0.0',
+    "name": "Account Move Line Analytic Filters",
+    'version': '9.0.1.0.0',
     'category': 'Accounting',
     'sequence': 14,
     'description': """
-Account Move Analytic
-=====================
+Account Move Line Analytic Filters
+==================================
+Add availability to search and group by Analytic Account on Journal Items
     """,
     'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
@@ -42,8 +43,7 @@ Account Move Analytic
     ],
     'test': [
     ],
-    'installable': False,
-    # incompatibility with account_analytic_accounts:
+    'installable': True,
     'auto_install': False,
     'application': False,
 }
