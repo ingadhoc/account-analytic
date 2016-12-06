@@ -23,7 +23,7 @@
     'version': '9.0.1.0.0',
     'category': 'Accounting',
     'sequence': 14,
-    'summary': 'Quotations, Sales Orders, Invoicing',
+    'summary': 'Contract Purchase, Invoicing',
     'author': 'ADHOC SA',
     'website': 'www.adhoc.com.ar',
     'license': 'AGPL-3',
