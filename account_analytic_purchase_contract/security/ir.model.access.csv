@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_analytic_invoice_line_purchase_user,account_analytic_invoice_line_purchase.user,account_analytic_analysis.model_account_analytic_invoice_line,purchase.group_purchase_user,1,1,1,1
