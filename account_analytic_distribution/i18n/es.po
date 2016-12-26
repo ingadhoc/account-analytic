@@ -1,0 +1,116 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * account_analytic_distribution
+# 
+# Translators:
+# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2016
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-23 16:36+0000\n"
+"PO-Revision-Date: 2016-12-23 16:36+0000\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2016\n"
+"Language-Team: Spanish (https://www.transifex.com/adhoc/teams/46451/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: account_analytic_distribution
+#: model:ir.model,name:account_analytic_distribution.model_account_analytic_account
+#: model:ir.model.fields,field_description:account_analytic_distribution.field_account_analytic_account_distribution_line_account_analytic_id
+msgid "Analytic Account"
+msgstr "Cuenta Analitica"
+
+#. module: account_analytic_distribution
+#: model:ir.model.fields,field_description:account_analytic_distribution.field_account_analytic_account_distribution_line_create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: account_analytic_distribution
+#: model:ir.model.fields,field_description:account_analytic_distribution.field_account_analytic_account_distribution_line_create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: account_analytic_distribution
+#: model:ir.model.fields,field_description:account_analytic_distribution.field_account_analytic_account_distribution_line_display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: account_analytic_distribution
+#: model:ir.model.fields,field_description:account_analytic_distribution.field_account_analytic_account_distribution_line_distribution_analytic_id
+msgid "Distribution Account"
+msgstr "Cuenta de Distribución"
+
+#. module: account_analytic_distribution
+#: model:ir.ui.view,arch_db:account_analytic_distribution.view_account_analytic_account_form
+msgid "Distribution Information"
+msgstr "Información de Distribución"
+
+#. module: account_analytic_distribution
+#: model:ir.model.fields,field_description:account_analytic_distribution.field_account_analytic_account_distribution_line_ids
+msgid "Distribution Line"
+msgstr "Línea de Distribución"
+
+#. module: account_analytic_distribution
+#: model:ir.model.fields,field_description:account_analytic_distribution.field_account_analytic_account_distribution_line_id
+msgid "ID"
+msgstr ""
+
+#. module: account_analytic_distribution
+#: model:ir.model,name:account_analytic_distribution.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: account_analytic_distribution
+#: model:ir.model,name:account_analytic_distribution.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte Contable"
+
+#. module: account_analytic_distribution
+#: model:ir.model.fields,field_description:account_analytic_distribution.field_account_analytic_account_distribution_line___last_update
+msgid "Last Modified on"
+msgstr "Última Modificación en"
+
+#. module: account_analytic_distribution
+#: model:ir.model.fields,field_description:account_analytic_distribution.field_account_analytic_account_distribution_line_write_uid
+msgid "Last Updated by"
+msgstr "Última actualización realizada por"
+
+#. module: account_analytic_distribution
+#: model:ir.model.fields,field_description:account_analytic_distribution.field_account_analytic_account_distribution_line_write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: account_analytic_distribution
+#: code:addons/account_analytic_distribution/account_analytic_account.py:30
+#, python-format
+msgid "Lines of the analytic distribuion account \"%s\" must sum 100"
+msgstr "Las líneas de la distribución analítica \"%s\" deben sumar 100"
+
+#. module: account_analytic_distribution
+#: model:ir.model.fields,field_description:account_analytic_distribution.field_account_analytic_account_distribution_line_percentage
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#. module: account_analytic_distribution
+#: model:ir.ui.view,arch_db:account_analytic_distribution.view_account_analytic_account_form
+msgid "Total"
+msgstr "Total"
+
+#. module: account_analytic_distribution
+#: code:addons/account_analytic_distribution/account_move_line.py:19
+#, python-format
+msgid ""
+"You can not choose an analytic account of type \"Distribution\" on a journal"
+" entry, you need to split lines manually"
+msgstr ""
+"No puede elegir una cuenta analítica del tipo \"Distribución\" en un apunte "
+"contable, debe separar las líneas manualmente"
+
+#. module: account_analytic_distribution
+#: model:ir.model,name:account_analytic_distribution.model_account_analytic_account_distribution_line
+msgid "account.analytic.account.distribution_line"
+msgstr ""
