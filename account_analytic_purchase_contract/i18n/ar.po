@@ -3,14 +3,15 @@
 # * account_analytic_purchase_contract
 # 
 # Translators:
+# Haitham EL-Sayed <freelancetranslator444@yahoo.com>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: odoo-addons (8.0)\n"
+"Project-Id-Version: account-analytic (8.0)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-02 18:20+0000\n"
-"PO-Revision-Date: 2015-09-01 18:07+0000\n"
-"Last-Translator: <>\n"
-"Language-Team: Arabic (http://www.transifex.com/adhoc/ingadhoc-odoo-addons-8-0/language/ar/)\n"
+"POT-Creation-Date: 2017-01-17 22:08+0000\n"
+"PO-Revision-Date: 2016-07-12 18:49+0000\n"
+"Last-Translator: Haitham EL-Sayed <freelancetranslator444@yahoo.com>\n"
+"Language-Team: Arabic (http://www.transifex.com/adhoc/ingadhoc-account-analytic-8-0/language/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -25,18 +26,18 @@ msgstr ""
 #. module: account_analytic_purchase_contract
 #: view:account.analytic.account:account_analytic_purchase_contract.view_purchase_contract_form
 msgid "Account Analytic Lines"
-msgstr ""
+msgstr "خطوط الحساب التحليلي"
 
 #. module: account_analytic_purchase_contract
 #: view:account.analytic.account:account_analytic_purchase_contract.view_purchase_contract_form
 #: model:ir.model,name:account_analytic_purchase_contract.model_account_analytic_account
 msgid "Analytic Account"
-msgstr ""
+msgstr "حساب تحليلي"
 
 #. module: account_analytic_purchase_contract
 #: view:account.analytic.account:account_analytic_purchase_contract.view_purchase_contract_form
 msgid "Cancel Contract"
-msgstr ""
+msgstr "عقد"
 
 #. module: account_analytic_purchase_contract
 #: view:account.analytic.account:account_analytic_purchase_contract.view_purchase_contract_form
@@ -47,12 +48,12 @@ msgstr ""
 #: model:ir.actions.act_window,name:account_analytic_purchase_contract.action_contract_purchase
 #: model:ir.ui.menu,name:account_analytic_purchase_contract.contract_purchase
 msgid "Contract"
-msgstr ""
+msgstr "عقد"
 
 #. module: account_analytic_purchase_contract
 #: view:account.analytic.account:account_analytic_purchase_contract.view_purchase_contract_form
 msgid "Contract Information"
-msgstr ""
+msgstr "معلومات عقود"
 
 #. module: account_analytic_purchase_contract
 #: view:account.analytic.account:account_analytic_purchase_contract.view_purchase_contract_form
@@ -69,7 +70,7 @@ msgstr "خطأ!"
 #: code:addons/account_analytic_purchase_contract/account_analytic_analysis.py:29
 #, python-format
 msgid "No Supplier Defined!"
-msgstr ""
+msgstr "لا يوجود مورد معرف!"
 
 #. module: account_analytic_purchase_contract
 #: view:account.analytic.account:account_analytic_purchase_contract.view_purchase_contract_form
@@ -80,7 +81,7 @@ msgid ""
 "                                        reached, the account manager is notified \n"
 "                                        by email to renew the contract with the\n"
 "                                        customer."
-msgstr ""
+msgstr "في حال مرور تاريخ انتهاء العقد أو الوصول للحد الاقصي لعدد وحدات الخدمة( مثل: عقد الدعم)، يُخطر مدير الحسابات بموجب البريد الإلكتروني لتجديد العقد مع العميل."
 
 #. module: account_analytic_purchase_contract
 #: code:addons/account_analytic_purchase_contract/account_analytic_analysis.py:37
@@ -91,33 +92,33 @@ msgstr ""
 #. module: account_analytic_purchase_contract
 #: view:account.analytic.account:account_analytic_purchase_contract.view_purchase_contract_form
 msgid "Recurring Invoices"
-msgstr ""
+msgstr "فواتير متواترة"
 
 #. module: account_analytic_purchase_contract
 #: view:account.analytic.account:account_analytic_purchase_contract.view_purchase_contract_form
 msgid "Renewal"
-msgstr ""
+msgstr "التجديد"
 
 #. module: account_analytic_purchase_contract
 #: view:account.analytic.account:account_analytic_purchase_contract.view_purchase_contract_form
 msgid "Set In Progress"
-msgstr ""
+msgstr " قيد العمل"
 
 #. module: account_analytic_purchase_contract
 #: view:account.analytic.account:account_analytic_purchase_contract.view_purchase_contract_form
 #: view:account.analytic.account:account_analytic_purchase_contract.view_purchase_contract_tree
 msgid "Supplier"
-msgstr ""
+msgstr "مورد"
 
 #. module: account_analytic_purchase_contract
 #: view:account.analytic.account:account_analytic_purchase_contract.view_purchase_contract_form
 msgid "Terms and Conditions"
-msgstr ""
+msgstr "الشروط والأحكام"
 
 #. module: account_analytic_purchase_contract
 #: view:account.analytic.account:account_analytic_purchase_contract.view_purchase_contract_form
 msgid "To Renew"
-msgstr ""
+msgstr "لتجديد"
 
 #. module: account_analytic_purchase_contract
 #: code:addons/account_analytic_purchase_contract/account_analytic_analysis.py:29
@@ -128,4 +129,4 @@ msgstr ""
 #. module: account_analytic_purchase_contract
 #: view:account.analytic.account:account_analytic_purchase_contract.view_purchase_contract_form
 msgid "⇒ create invoices"
-msgstr ""
+msgstr "أنشاء فواتير"
