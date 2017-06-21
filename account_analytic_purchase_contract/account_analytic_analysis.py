@@ -12,7 +12,7 @@ import time
 from openerp.osv import osv, fields
 import openerp.tools
 from openerp.tools.translate import _
-
+from openerp import models, api
 from openerp.addons.decimal_precision import decimal_precision as dp
 
 
@@ -69,7 +69,7 @@ class account_analytic_account(osv.osv):
             fiscal_position = None
             if fiscal_position_id:
                 fiscal_position = fpos_obj.browse(
-                    cr, uid,  fiscal_position_id, context=context)
+                    cr, uid, fiscal_position_id, context=context)
             invoice_lines = []
             for line in contract.recurring_invoice_line_ids:
 
@@ -85,9 +85,11 @@ class account_analytic_account(osv.osv):
                     tax_ids = [x.id for x in taxes]
                     tax_ids = self.pool['account.tax'].search(
                         cr, uid,
-                        [('id', 'in', tax_ids), ('company_id', '=', contract.company_id.id)],
+                        [('id', 'in', tax_ids),
+                         ('company_id', '=', contract.company_id.id)],
                         context=context)
-                    taxes = self.pool['account.tax'].browse(cr, uid, tax_ids, context=context)
+                    taxes = self.pool['account.tax'].browse(
+                        cr, uid, tax_ids, context=context)
                 tax_id = fpos_obj.map_tax(cr, uid, fiscal_position, taxes)
 
                 invoice_lines.append((0, 0, {
@@ -105,7 +107,41 @@ class account_analytic_account(osv.osv):
             return super(account_analytic_account, self)._prepare_invoice_lines(cr, uid, contract, fiscal_position_id, context=None)
 
     def _cron_recurring_create_invoice_purchase(self, cr, uid, context=None):
-        current_date =  time.strftime('%Y-%m-%d')
+        current_date = time.strftime('%Y-%m-%d')
         contract_ids = self.search(cr, uid, [('recurring_next_date', '<=', current_date), (
             'state', '=', 'open'), ('recurring_invoices', '=', True), ('type', '=', 'purchase_contract')])
         return self._recurring_create_invoice(cr, uid, contract_ids, context=context)
+
+
+class AccountAnalyticInvoiceLine(models.Model):
+    _inherit = "account.analytic.invoice.line"
+
+    @api.multi
+    def product_id_change(
+            self, product, uom_id, qty=0, name='', partner_id=False,
+            price_unit=False, pricelist_id=False, company_id=None):
+        context = self._context or {}
+        company_id = company_id or False
+        local_context = dict(context, company_id=company_id,
+                             force_company=company_id, pricelist=pricelist_id)
+        result = super(AccountAnalyticInvoiceLine, self).product_id_change(
+            product=product, uom_id=uom_id, qty=0, name='',
+            partner_id=False, price_unit=False, pricelist_id=False,
+            company_id=None)
+
+        if not product or not context.get('purchase', False):
+            return result
+        res = self.env['product.product'].with_context(local_context).browse(
+            product)
+        if pricelist_id:
+            price = res.price
+        else:
+            price = res.standard_price
+        result['value']['price_unit'] = price
+        if result['value']['uom_id'] != res.uom_id.id:
+            new_price = self.env['product.uom']._compute_price(
+                res.uom_id.id,
+                result['value']['price_unit'],
+                result['value']['uom_id'])
+            result['value']['price_unit'] = new_price
+        return result
