@@ -3,8 +3,8 @@
 # For copyright and license notices, see __openerp__.py file in module root
 # directory
 ##############################################################################
-from openerp import models, api, _
-from openerp.exceptions import Warning
+from openerp import models, api
+# from openerp.exceptions import Warning
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -26,16 +26,18 @@ class AccountInvoice(models.Model):
         """
         move_lines = super(
             AccountInvoice, self).finalize_invoice_move_lines(move_lines)
+        print 'move_lines', move_lines
         new_move_lines = []
         for a, b, move_line in move_lines:
             analytic = self.env['account.analytic.account'].browse(
                 move_line['analytic_account_id'])
-            if analytic.account_type == 'distribution':
+            if analytic.is_distribution:
                 analytic.check_distribution_lines()
                 remaining_lines = len(analytic.distribution_line_ids)
                 # we do this way because of rounding erros, we use residual
                 # on last line
-                tax_amount = tax_residual = move_line['tax_amount']
+                amount_currency = amount_currency_residual = move_line[
+                    'amount_currency']
                 debit = debit_residual = move_line['debit']
                 credit = credit_residual = move_line['credit']
                 for dist_line in analytic.distribution_line_ids:
@@ -43,7 +45,7 @@ class AccountInvoice(models.Model):
                     percentage = dist_line.percentage / 100.0
                     new_account_id = dist_line.account_analytic_id.id
                     if remaining_lines == 1:
-                        new_line_tax_amount = tax_residual
+                        new_line_amount_currency = amount_currency_residual
                         new_line_debit = debit_residual
                         new_line_credit = credit_residual
                     else:
@@ -51,19 +53,20 @@ class AccountInvoice(models.Model):
                             debit * percentage)
                         new_line_credit = credit and inv_round(
                             credit * percentage)
-                        new_line_tax_amount = tax_amount and inv_round(
-                            tax_amount * percentage)
-                        tax_residual -= new_line_tax_amount
+                        new_line_amount_currency = (
+                            amount_currency and inv_round(
+                                amount_currency * percentage))
+                        amount_currency_residual -= new_line_amount_currency
                         debit_residual -= new_line_debit
                         credit_residual -= new_line_credit
                     remaining_lines -= 1
                     new_line = move_line.copy()
                     new_line['analytic_account_id'] = new_account_id
-                    new_line['tax_amount'] = new_line_tax_amount
+                    new_line['amount_currency'] = new_line_amount_currency
                     new_line['credit'] = new_line_credit
                     new_line['debit'] = new_line_debit
 
-                    for c, d, analytic_line in new_line['analytic_lines']:
+                    for c, d, analytic_line in new_line['analytic_line_ids']:
                         analytic_line['amount'] = (
                             analytic_line['amount'] * percentage)
                         analytic_line['account_id'] = new_account_id

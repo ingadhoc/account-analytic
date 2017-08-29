@@ -12,8 +12,7 @@ _logger = logging.getLogger(__name__)
 class AccountAnalyticAccount(models.Model):
     _inherit = "account.analytic.account"
 
-    account_type = fields.Selection(
-        selection_add=[('distribution', 'Distribution')],
+    is_distribution = fields.Boolean(
     )
     distribution_line_ids = fields.One2many(
         'account.analytic.account.distribution_line',
@@ -22,11 +21,11 @@ class AccountAnalyticAccount(models.Model):
     )
 
     @api.one
-    @api.constrains('distribution_line_ids', 'account_type')
+    @api.constrains('distribution_line_ids', 'is_distribution')
     def check_distribution_lines(self):
         difference = self.company_id.currency_id.round(sum(
             self.distribution_line_ids.mapped('percentage')) - 100.0)
-        if self.account_type == 'distribution' and difference:
+        if self.is_distribution and difference:
             raise Warning(_(
                 'Lines of the analytic distribuion account "%s" must '
                 'sum 100') % self.name)

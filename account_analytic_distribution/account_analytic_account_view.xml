@@ -7,11 +7,14 @@
             <field name="model">account.analytic.account</field>
             <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
             <field name="arch" type="xml">
+                <field name="tag_ids" position="after">
+                    <field name="is_distribution"/>
+                </field>
                 <notebook>
-                    <page string="Distribution Information" name="distribution_page" attrs="{'invisible': [('account_type', '!=', 'distribution')]}">
+                    <page string="Distribution Information" name="distribution_page" attrs="{'invisible': [('is_distribution', '=', False)]}">
                         <field name="distribution_line_ids">
                             <tree editable="bottom">
-                                <field name="account_analytic_id" domain="[('company_id', '=', parent.company_id), ('account_type', 'not in', ['view', 'distribution'])]"/>
+                                <field name="account_analytic_id" domain="[('company_id', '=', parent.company_id), ('is_distribution', '=', False)]"/>
                                 <field name="percentage" sum="Total"/>
                             </tree>
                         </field>
