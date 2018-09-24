@@ -46,8 +46,8 @@ class AccountInvoice(models.Model):
                     new_account_id = dist_line.account_analytic_id.id
                     if remaining_lines == 1:
                         new_line_amount_currency = amount_currency_residual
-                        new_line_debit = debit_residual
-                        new_line_credit = credit_residual
+                        new_line_debit = inv_round(debit_residual)
+                        new_line_credit = inv_round(credit_residual)
                     else:
                         new_line_debit = debit and inv_round(
                             debit * percentage)
