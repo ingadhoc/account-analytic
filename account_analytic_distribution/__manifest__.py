@@ -19,7 +19,7 @@
 ##############################################################################
 {
     'name': 'Account Analytic Distribution',
-    'version': '9.0.1.1.0',
+    'version': '11.0.1.0.0',
     'category': 'Accounting',
     'sequence': 14,
     'summary': '',
@@ -30,16 +30,15 @@
     ],
     'depends': [
         'account',
+        'sales_team',
     ],
     'data': [
-        'account_analytic_account_view.xml',
+        'views/account_analytic_account_views.xml',
         'security/ir.model.access.csv',
     ],
     'demo': [
     ],
-    'test': [
-    ],
-    'installable': False,
+    'installable': True,
     'auto_install': False,
     'application': False,
 }

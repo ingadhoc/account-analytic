@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <data>
 
-        <record id="view_account_analytic_account_form" model="ir.ui.view">
-            <field name="name">analytic.analytic.account.form</field>
-            <field name="model">account.analytic.account</field>
-            <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
-            <field name="arch" type="xml">
-                <field name="tag_ids" position="after">
-                    <field name="is_distribution"/>
-                </field>
+    <record id="view_account_analytic_account_form" model="ir.ui.view">
+        <field name="name">analytic.analytic.account.form</field>
+        <field name="model">account.analytic.account</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+        <field name="arch" type="xml">
+            <field name="tag_ids" position="after">
+                <field name="is_distribution"/>
+            </field>
+            <group name="main" position="after">
                 <notebook>
                     <page string="Distribution Information" name="distribution_page" attrs="{'invisible': [('is_distribution', '=', False)]}">
                         <field name="distribution_line_ids">
@@ -20,8 +20,8 @@
                         </field>
                     </page>
                 </notebook>
-            </field>
-        </record>
+            </group>
+        </field>
+    </record>
 
-    </data>
 </odoo>

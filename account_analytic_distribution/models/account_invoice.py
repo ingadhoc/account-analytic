@@ -3,7 +3,6 @@
 # directory
 ##############################################################################
 from odoo import models, api
-# from odoo.exceptions import Warning
 import logging
 _logger = logging.getLogger(__name__)
 
@@ -25,7 +24,6 @@ class AccountInvoice(models.Model):
         """
         move_lines = super(
             AccountInvoice, self).finalize_invoice_move_lines(move_lines)
-        print 'move_lines', move_lines
         new_move_lines = []
         for a, b, move_line in move_lines:
             analytic = self.env['account.analytic.account'].browse(
@@ -45,8 +43,8 @@ class AccountInvoice(models.Model):
                     new_account_id = dist_line.account_analytic_id.id
                     if remaining_lines == 1:
                         new_line_amount_currency = amount_currency_residual
-                        new_line_debit = debit_residual
-                        new_line_credit = credit_residual
+                        new_line_debit = inv_round(debit_residual)
+                        new_line_credit = inv_round(credit_residual)
                     else:
                         new_line_debit = debit and inv_round(
                             debit * percentage)
