@@ -3,15 +3,14 @@
 # * account_analytic_distribution
 # 
 # Translators:
-# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2016
-# Gonzalo Ruzafa <gr@ingadhoc.com>, 2017
+# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2018
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 9.0c\n"
+"Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-01 19:20+0000\n"
-"PO-Revision-Date: 2017-09-01 19:20+0000\n"
-"Last-Translator: Gonzalo Ruzafa <gr@ingadhoc.com>, 2017\n"
+"POT-Creation-Date: 2018-09-28 22:30+0000\n"
+"PO-Revision-Date: 2018-09-28 22:30+0000\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2018\n"
 "Language-Team: Spanish (https://www.transifex.com/adhoc/teams/46451/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,8 +71,8 @@ msgstr "Factura"
 
 #. module: account_analytic_distribution
 #: model:ir.model.fields,field_description:account_analytic_distribution.field_account_analytic_account_is_distribution
-msgid "Is distribution"
-msgstr "Es distribución"
+msgid "Is Distribution"
+msgstr ""
 
 #. module: account_analytic_distribution
 #: model:ir.model,name:account_analytic_distribution.model_account_move_line
@@ -96,7 +95,7 @@ msgid "Last Updated on"
 msgstr "Última actualización el"
 
 #. module: account_analytic_distribution
-#: code:addons/account_analytic_distribution/account_analytic_account.py:29
+#: code:addons/account_analytic_distribution/models/account_analytic_account.py:26
 #, python-format
 msgid "Lines of the analytic distribuion account \"%s\" must sum 100"
 msgstr "Las líneas de la distribución analítica \"%s\" deben sumar 100"
@@ -112,7 +111,7 @@ msgid "Total"
 msgstr "Total"
 
 #. module: account_analytic_distribution
-#: code:addons/account_analytic_distribution/account_move_line.py:19
+#: code:addons/account_analytic_distribution/models/account_move_line.py:16
 #, python-format
 msgid ""
 "You can not choose an analytic account of type \"Distribution\" on a journal"
@@ -122,7 +121,7 @@ msgstr ""
 "contable, debe separar las líneas manualmente"
 
 #. module: account_analytic_distribution
-#: code:addons/account_analytic_distribution/account_analytic_line.py:19
+#: code:addons/account_analytic_distribution/models/account_analytic_line.py:15
 #, python-format
 msgid ""
 "You can not choose an analytic account of type \"Distribution\" on an "
