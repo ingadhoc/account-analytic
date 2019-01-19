@@ -3,14 +3,15 @@
 # * account_analytic_distribution
 # 
 # Translators:
-# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2018
+# Juan José Scarafía <scarafia.juanjose@gmail.com>, 2019
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 11.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-28 22:30+0000\n"
+"POT-Creation-Date: 2018-09-28 23:05+0000\n"
 "PO-Revision-Date: 2018-09-28 22:30+0000\n"
-"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2018\n"
+"Last-Translator: Juan José Scarafía <scarafia.juanjose@gmail.com>, 2019\n"
 "Language-Team: Spanish (https://www.transifex.com/adhoc/teams/46451/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -72,7 +73,7 @@ msgstr "Factura"
 #. module: account_analytic_distribution
 #: model:ir.model.fields,field_description:account_analytic_distribution.field_account_analytic_account_is_distribution
 msgid "Is Distribution"
-msgstr ""
+msgstr "Es Distribución"
 
 #. module: account_analytic_distribution
 #: model:ir.model,name:account_analytic_distribution.model_account_move_line
