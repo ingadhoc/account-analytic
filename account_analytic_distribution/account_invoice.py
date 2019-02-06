@@ -26,7 +26,6 @@ class AccountInvoice(models.Model):
         """
         move_lines = super(
             AccountInvoice, self).finalize_invoice_move_lines(move_lines)
-        print 'move_lines', move_lines
         new_move_lines = []
         for a, b, move_line in move_lines:
             analytic = self.env['account.analytic.account'].browse(
@@ -59,6 +58,17 @@ class AccountInvoice(models.Model):
                         amount_currency_residual -= new_line_amount_currency
                         debit_residual -= new_line_debit
                         credit_residual -= new_line_credit
+                        # esto es para cuando son importes chicos y porcentajes
+                        # chicos y como el redondeo es para arriba, llega un
+                        # momento donde puede no haber mas saldo entonces
+                        # forzamos el cierre del balance aca y luego la linea
+                        # de cierre se hace en cero
+                        if credit_residual < 0.0:
+                            new_line_credit += credit_residual
+                            credit_residual = 0.0
+                        if debit_residual < 0.0:
+                            new_line_debit += debit_residual
+                            debit_residual = 0.0
                     remaining_lines -= 1
                     new_line = move_line.copy()
                     new_line['analytic_account_id'] = new_account_id
